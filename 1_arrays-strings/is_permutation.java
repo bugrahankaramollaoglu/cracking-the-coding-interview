@@ -1,4 +1,4 @@
-public class isPermutation {
+public class is_permutation {
 	/*
 	 * given two strings write a function to decide if one is permutation of the
 	 * other
