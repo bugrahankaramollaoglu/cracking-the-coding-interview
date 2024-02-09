@@ -1,14 +1,3 @@
-class Node {
-
-	Node next = null;
-	int data;
-
-	public Node(int d) {
-		this.data = d;
-		this.next = null;
-	}
-}
-
 public class SLL {
 	private Node head;
 
@@ -39,27 +28,51 @@ public class SLL {
 	}
 
 	public void remove_front() {
-		if (head != null || head.next != null) {
+		if (head == null || head.next == null) {
+			return;
+		} else {
 			head = head.next;
+			// thankfully java has garbage collector
 		}
 	}
 
 	public void remove_back() {
 		if (head == null || head.next == null) {
-			System.out.println("girdi");
 			// If the list is empty or has only one node, there's nothing to remove
 			return;
+		}
+		Node curr = head;
+		while (curr.next != null) {
+			curr = curr.next;
+		}
+	}
+
+	public void remove_node(int data) {
+		Node curr = head;
+		Node prev = null;
+		while (curr.next != null) {
+			if (curr.data == data) {
+				if (prev == null) {
+					head = curr.next;
+					break;
+				} else {
+					prev.next = curr.next;
+				}
+				return;
+			}
+			prev = curr;
+			curr = curr.next;
 		}
 	}
 
 	public void print_list() {
 		Node curr = head;
 		if (curr == null) {
-			System.out.println("[]");
+			System.out.println("[] ");
 			return;
 		}
 		while (curr != null) {
-			System.out.print("[" + curr.data + "]");
+			System.out.print("[" + curr.data + "] ");
 			curr = curr.next;
 		}
 		System.out.println();
@@ -69,12 +82,13 @@ public class SLL {
 		SLL sll = new SLL();
 		// sll.print_list();
 		sll.append_front(10);
-		// sll.append_front(20);
-		// sll.append_back(30);
-		// sll.append_back(40);
+		sll.append_front(20);
+		sll.append_back(30);
+		sll.append_back(40);
 		sll.remove_back();
-		// sll.remove_front();
-		// sll.print_list();
+		sll.remove_front();
+		sll.remove_node(10);
+		sll.print_list();
 	}
 
 }
