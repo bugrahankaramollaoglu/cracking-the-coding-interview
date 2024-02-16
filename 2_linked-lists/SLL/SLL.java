@@ -1,5 +1,5 @@
 public class SLL {
-	private Node head;
+	Node head;
 
 	public SLL() {
 		this.head = null;
@@ -75,6 +75,7 @@ public class SLL {
 			System.out.print("[" + curr.data + "] ");
 			curr = curr.next;
 		}
+		System.out.println();
 		System.out.println();
 	}
 
