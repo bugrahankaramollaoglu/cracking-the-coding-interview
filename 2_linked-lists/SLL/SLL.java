@@ -68,11 +68,11 @@ public class SLL {
 	public void print_list() {
 		Node curr = head;
 		if (curr == null) {
-			System.out.println("[] ");
+			System.out.println("[]->");
 			return;
 		}
 		while (curr != null) {
-			System.out.print("[" + curr.data + "] ");
+			System.out.print("[" + curr.data + "]->");
 			curr = curr.next;
 		}
 		System.out.println();
