@@ -38,7 +38,7 @@ public class SLL {
 
 	public void remove_back() {
 		if (head == null || head.next == null) {
-			// If the list is empty or has only one node, there's nothing to remove
+			// If the list is empty or has only one node, there's nothing to remove.
 			return;
 		}
 		Node curr = head;
